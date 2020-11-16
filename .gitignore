@@ -1,0 +1,7 @@
+bin/
+obj/
+.idea/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+/.vs/Yocale.Legacy.UI.Web/v16/.suo
