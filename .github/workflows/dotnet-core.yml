@@ -24,10 +24,10 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Publish  
-      uses: brandedoutcast/publish-nuget@v2.5.2  
-      with:   
-       PROJECT_FILE_PATH: Moneris.Core/Moneris.Core.csproj  
-       NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
-       VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
-
+      uses: brandedoutcast/publish-nuget@v2.5.2
+    - name: Publish NuGet
+      with:
+        PROJECT_FILE_PATH: Moneris.Core/Moneris.Core.csproj  
+        PACKAGE_NAME: Moneris.Core
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
