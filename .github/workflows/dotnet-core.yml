@@ -29,4 +29,8 @@ jobs:
         PROJECT_FILE_PATH: Moneris.Core/Moneris.Core.csproj  
         PACKAGE_NAME: Moneris.Core
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: Pack
+      run: dotnet pack --no-build --configuration Release Moneris.Core/Moneris.Core.csproj --output .
+    - name: PushNuget
+      run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
 
